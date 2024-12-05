@@ -144,7 +144,7 @@ bool Decoder::initDecoder(const std::string & encoding, const std::string & deco
       throw(std::runtime_error("alloc context failed!"));
     }
     av_opt_set_int(codecContext_, "refcounted_frames", 1, 0);
-    const std::string hwAcc("cuda");
+    const std::string hwAcc("cpu");
     enum AVHWDeviceType hwDevType = get_hw_type(hwAcc, logger_);
     // default
     hwPixFormat_ = AV_PIX_FMT_NONE;
